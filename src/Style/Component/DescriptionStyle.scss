@@ -1,0 +1,30 @@
+@import "../Helper/Variable.scss";
+
+.description {
+  width: 960px;
+  margin: 20px auto;
+}
+.description span:nth-child(3) {
+  color: $blue;
+  cursor: pointer;
+}
+.description h6 {
+  margin: 20px 0 10px 0;
+}
+.description h3 {
+  color: $blue;
+}
+
+@media (max-width: 1050px) {
+  .description {
+    width: 800px;
+  }
+  .description h3 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 850px) {
+  .description {
+    width: 450px;
+  }
+}

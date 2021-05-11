@@ -1,0 +1,34 @@
+@import "../Helper/Variable.scss";
+
+.user .userTicket .nav-pills .nav-link.active {
+  color: #007bff;
+}
+.user .userTicket_header {
+  border-bottom: 1px solid $black;
+}
+
+// .user .userTicket ul li::after {
+//   width: 0;
+//   height: 1px;
+//   background-color: #007bff;
+//   content: "";
+//   display: block;
+// }
+// .user .userTicket ul li.active::after {
+//   width: 100%;
+// }
+
+.user .userTicket_content tr th {
+  border-top: none;
+}
+
+@media (max-width: 992px) {
+  .user .userTicket_content table {
+    font-size: 13px;
+  }
+}
+@media (max-width: 768px) {
+  .user .userTicket ul li a {
+    padding: 8px 10px;
+  }
+}

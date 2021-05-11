@@ -1,0 +1,180 @@
+@import "../Helper/Variable.scss";
+
+.detail .detail_content {
+  margin-top: 20px;
+  max-height: 3000px;
+  overflow-y: auto;
+}
+.detail .detail_content .detail_item {
+  padding: 15px;
+  border: 1px solid $black;
+  transition: 0.3s;
+  margin-bottom: 25px;
+}
+.detail .detail_content .detail_item:hover {
+  box-shadow: 0 15px 5px #888888;
+}
+.detail .detail_content .detail_item .detail_item_info {
+  display: flex;
+}
+.detail .detail_content .detail_item .detail_item_info img {
+  width: 25%;
+}
+.detail .detail_item_car {
+  margin-left: 1rem;
+}
+.detail .detail_tenhangxe {
+  font-weight: bold;
+}
+.detail .detail_rate {
+  background-color: $blue;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+.detail .detail_rate i.fa {
+  margin-right: 0.25rem;
+  color: #fff;
+}
+.detail .detail_rate span {
+  color: white;
+}
+.detail .detail_ghengoi {
+  margin: 1rem 0;
+}
+.detail .detail_range {
+  display: flex;
+}
+.detail .detail_range_icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.detail .detail_circle {
+  font-size: 20px;
+}
+.detail .detail_dot {
+  font-size: 5px;
+  margin-bottom: 2px;
+}
+.detail .detail_location {
+  margin-top: 0.25rem;
+}
+.detail .detail_distance {
+  display: flex;
+  margin-left: 0.5rem;
+  flex-direction: column;
+}
+.detail .detail_timeFrom,
+.detail .detail_timeTo {
+  font-size: 20px;
+}
+.detail .detail_timeFrom span,
+.detail .detail_timeTo span {
+  font-weight: bold;
+}
+.detail .detail_item_price {
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+}
+.detail .detail_price {
+  font-size: 20px;
+  color: $blue;
+  font-weight: bold;
+}
+.detail .detail_choTrong {
+  font-size: 17px;
+  margin-bottom: 25px;
+  margin-top: 1.5rem;
+}
+.detail .detail_thongTin {
+  font-size: 17px;
+  margin-right: 25px;
+  color: $blue;
+  cursor: pointer;
+}
+.detail .detail_btnDatVe {
+  padding: 7px 15px;
+  background-color: #ffc700;
+  font-weight: 500;
+  border: none;
+}
+.detail .detail_warning {
+  margin-top: 1rem;
+  display: block;
+}
+.detail span.detail_warning_icon {
+  color: red;
+}
+.detail .detail_warning_text {
+  font-style: italic;
+}
+
+@media (max-width: 1050px) {
+  .detail,
+  .detail .detail_distance span {
+    font-size: 12px;
+  }
+  .detail .detail_range_icon i {
+    font-size: 8px;
+  }
+  .detail .detail_range_icon i.detail_dot {
+    font-size: 3px;
+  }
+  .trip_content .detail {
+    // max-width: 63%;
+    padding-left: 0;
+  }
+}
+@media (max-width: 850px) {
+  .detail .detail_title {
+    font-size: 16px;
+    margin-bottom: 10px !important;
+  }
+  .detail .detail_filter span {
+    margin-right: 1rem !important;
+  }
+  .detail .detail_content .detail_item .detail_item_info {
+    display: block;
+  }
+  .detail .detail_item {
+    padding-top: 0 !important;
+  }
+  .detail .detail_item_price {
+    text-align: left;
+  }
+  .detail .detail_item_car {
+    float: left !important;
+    width: 84%;
+  }
+  .detail .detail_item_price {
+    float: left !important;
+    width: 100%;
+  }
+  .trip_content .detail .detail_content .detail_item .detail_item_info img {
+    float: left !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: 15px;
+  }
+  .detail .detail_ghengoi {
+    display: inline-block;
+    margin: 10px 0 2px 15px;
+  }
+  .detail .detail_range {
+    margin-top: 5px;
+  }
+  .detail .detail_choTrong {
+    margin: 0;
+  }
+  .detail .detail_warning {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 765px) {
+  .detail .detail_content {
+    width: 350px;
+  }
+}

@@ -1,0 +1,55 @@
+@import "../Helper/Variable.scss";
+
+.question {
+  width: 960px;
+  margin: 20px auto;
+  background-color: #f4f4f4;
+}
+.question .question_sidebar {
+  float: left;
+  width: 25%;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  padding: 20px;
+}
+.question .question_content {
+  float: left;
+  width: 75%;
+  background-color: white;
+}
+.question .question_item {
+  border: 1px solid $black;
+  padding: 20px;
+  display: flex;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.question .question_item i.fa {
+  margin-left: auto;
+}
+
+@media (max-width: 1050px) {
+  .question {
+    width: 800px;
+  }
+  .question .question_sidebar,
+  .question .question_content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .question {
+    width: 450px;
+  }
+  .question .question_sidebar,
+  .question .question_content span {
+    font-size: 15px;
+  }
+  .question .question_item {
+    padding: 10px;
+  }
+}

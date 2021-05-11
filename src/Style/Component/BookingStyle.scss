@@ -1,0 +1,108 @@
+@import "../Helper/Variable.scss";
+
+.booking {
+  padding: 20px 50px;
+  border-top: 1px solid $black;
+  margin-top: 10px;
+}
+.booking .booking_step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $black;
+}
+.booking .booking_step hr {
+  width: 100px;
+}
+.booking .booking_step_item span:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid $blue;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  background-color: $blue;
+}
+.booking .booking_step_item span:nth-child(2) {
+  margin-left: 10px;
+}
+.booking .booking_note {
+  margin-top: 20px;
+}
+.booking .booking_icon_item {
+  margin-bottom: 10px;
+}
+.booking .booking_icon_item span {
+  margin-left: 10px;
+}
+.booking .booking_icon_booked {
+  color: red;
+}
+.booking .booking_icon_choosing {
+  color: $blue;
+}
+.booking .booking_content {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $black;
+}
+.booking .booking_detail {
+  margin: 20px 0 0 150px;
+  background-color: $black;
+  padding: 20px;
+  border-radius: 20px;
+}
+.booking .seatItem i:nth-child(2),
+.booking .seatItem i:nth-child(3) {
+  margin-left: 10px;
+}
+.booking .seatItem i {
+  font-size: 30px;
+}
+.booking .booking_total {
+  display: flex;
+  margin-top: 20px;
+  text-align: right;
+  min-height: 38px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.booking .booking_total span:nth-child(2),
+.booking .booking_total span:nth-child(3) {
+  color: $blue;
+  font-weight: bold;
+}
+.booking .booking_total a:nth-child(4) {
+  margin-left: 10px;
+  color: white;
+}
+@media (max-width: 1050px) {
+  .booking .booking_step hr {
+    width: 50px;
+  }
+}
+@media (max-width: 850px) {
+  .booking {
+    padding: 0;
+  }
+  .booking .booking_step_item span:nth-child(2) {
+    margin-left: 3px;
+    font-size: 12px;
+  }
+  .booking .booking_step hr {
+    width: 10px;
+  }
+  .booking .booking_note {
+    margin-right: 35px;
+    margin-top: 5px;
+  }
+  .booking .booking_detail {
+    margin: 5px 0 0 0;
+  }
+  .booking .booking_total {
+    margin-top: 10px;
+  }
+}

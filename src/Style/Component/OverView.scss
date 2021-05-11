@@ -1,0 +1,31 @@
+@import "../Helper/Variable.scss";
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  .chart_item {
+  }
+  .chart_item_1,
+  .chart_item_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart_item_7 {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media (max-width: 1200px) {
+  .overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .overview {
+    grid-template-columns: repeat(1, 1fr);
+    .chart_item_7 {
+      grid-column: 1 / span 1;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.footer {
+  margin: 25px 0;
+  text-align: center;
+}
+.footer h5 {
+  color: rgb(77, 77, 77);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.footer span {
+  display: block;
+  font-size: 14px;
+  color: rgb(118, 118, 118);
+}
+
+@media (max-width: 576px) {
+  .footer span {
+    font-size: 12px;
+  }
+}

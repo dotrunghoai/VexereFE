@@ -1,0 +1,48 @@
+@import "../Helper/Variable.scss";
+
+.carouselSelect {
+  background-image: url("https:////static.vexere.com/production/banners/330/ngay-doi_leaderboard_1920.png");
+  //https:////static.vexere.com/production/banners/330/tet-2021_sv_leader-board-(1).png
+  height: 875px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  .searchContent {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  span {
+    color: white;
+    font-size: 34px;
+    font-weight: 500;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+@media (max-width: 1800px) {
+  .carouselSelect {
+    height: 500px;
+    span {
+      top: 35%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .carouselSelect {
+    height: 600px;
+  }
+}
+@media (max-width: 576px) {
+  .carouselSelect span {
+    font-size: 17px;
+  }
+}
+// 1200 992 768 576

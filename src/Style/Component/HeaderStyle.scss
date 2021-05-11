@@ -1,0 +1,206 @@
+@import "../Helper/Variable.scss";
+
+nav.header {
+  padding: 10px 450px;
+}
+.header ul li {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+.header ul li a {
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.header ul li a:hover {
+  color: rgb(0, 96, 196);
+}
+.header_lang span {
+  display: inline-block;
+  margin-right: 5px;
+}
+.header_hotline {
+  border: rgba(0, 0, 0, 0.2) 1px solid;
+  padding: 0 10px;
+}
+.header_hotline i {
+  margin-right: 7px;
+  font-size: 20px;
+  transform: rotate(90deg);
+}
+.header_btnLogin {
+  position: relative;
+  .btnDropdown,
+  .btnDangNhap {
+    background-color: rgb(0, 96, 196);
+    padding: 7px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    border: none;
+    .spanHello {
+      margin-right: 5px;
+    }
+    .spanUsername {
+      font-weight: 500;
+      white-space: nowrap;
+      max-width: 80px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    span {
+      transition: 0.5s;
+    }
+  }
+  span {
+    color: white;
+    text-decoration: none;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  i {
+    display: inline-block;
+    margin-right: 5px;
+    color: white;
+  }
+  button:hover {
+    background-color: #40a9ff;
+  }
+
+  //Dropdown Menu
+  .header_dropmenu {
+    min-width: 7.5rem;
+    padding: 0;
+    .header_dropItem {
+      cursor: pointer;
+      padding-left: 5px;
+      font-size: 12px;
+      i {
+        color: black;
+        margin-right: 10px;
+      }
+      a {
+        font-weight: normal;
+        font-size: 12px;
+      }
+      &:hover {
+        background-color: #40a9ff;
+      }
+    }
+    span {
+      color: black;
+    }
+  }
+}
+// Modal COPY
+.modalLogin {
+  .modalHeader {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1rem;
+    button {
+      display: block;
+      margin-left: auto;
+      border: none;
+      background-color: transparent;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+    }
+    h5 {
+      text-align: center;
+      color: $blue;
+      font-weight: bold;
+    }
+  }
+  .modal-body {
+    span {
+      font-weight: 500;
+    }
+    input {
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
+    .btnSignin {
+      border: 1px solid #d9d9d9;
+      &:hover {
+        border: 1px solid $blue;
+        color: $blue;
+      }
+    }
+    .separate {
+      margin-top: 30px;
+      display: flex;
+      hr {
+        width: 100%;
+      }
+      span {
+        padding-top: 2px;
+      }
+    }
+    .btnSignup {
+      font-weight: 400;
+      cursor: pointer;
+      color: $blue;
+    }
+    .errorInput {
+      background-color: $alert;
+      padding: 4px 10px;
+      // height: 28px;
+      font-size: 12px;
+    }
+    p {
+      text-align: center;
+      background-color: #f8d7da;
+      padding: 15px;
+      height: 52px;
+    }
+  }
+}
+//----------------------
+
+@media (max-width: 1700px) {
+  nav.header {
+    padding: 10px 250px;
+  }
+}
+@media (max-width: 1300px) {
+  nav.header {
+    padding: 10px 100px;
+  }
+}
+// @media (max-width: 1200px) {}
+@media (max-width: 992px) {
+  nav.header {
+    padding: 10px 10px;
+  }
+  nav.header ul {
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .header ul li {
+    margin-bottom: 10px;
+  }
+  .header li.header_hotline,
+  .header li.header_btnLogin {
+    width: 120px;
+  }
+  .header li.header_hotline {
+    padding: 10px;
+    justify-content: center;
+  }
+  .header .header_dropmenu {
+    position: absolute !important;
+  }
+}
+// @media (max-width: 768px) { ... }
+// @media (max-width: 576px) { ... }
+// xs -> sm -> md -> lg -> xl

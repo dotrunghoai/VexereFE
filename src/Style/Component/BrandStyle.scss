@@ -1,0 +1,31 @@
+@import "../Helper/Variable.scss";
+
+.brand,
+.car,
+.station,
+.tripAdmin,
+.order,
+.userAdmin {
+  h5 {
+    color: $blue;
+    font-weight: bold;
+  }
+  .modal-body {
+    p {
+      text-align: center;
+      background-color: #ebfaf2;
+      padding: 15px;
+      height: 52px;
+    }
+    span {
+      font-weight: bold;
+    }
+    input {
+      margin-bottom: 15px;
+      margin-top: 5px;
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+  }
+}

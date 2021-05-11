@@ -1,0 +1,11 @@
+.userInfo,
+.user_password {
+  span {
+    font-weight: 500;
+  }
+  .errorInput {
+    background-color: $alert;
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}

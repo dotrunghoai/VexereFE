@@ -1,0 +1,73 @@
+@import "../Helper/Variable.scss";
+
+.discount {
+  margin: 50px 25%;
+}
+.discount h4 {
+  margin-bottom: 20px;
+}
+.discount .discount_carousel {
+  position: relative;
+}
+.discount .owl-theme .owl-nav {
+  margin-top: 0;
+}
+.discount .owl-dots {
+  display: none;
+}
+.discount .owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 40px;
+}
+.discount .owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 40px;
+}
+.discount .owl-carousel .owl-nav span {
+  position: absolute;
+  top: -52%;
+  left: 32%;
+}
+.discount .owl-carousel .owl-nav:hover span {
+  color: black;
+}
+.discount_item {
+  cursor: pointer;
+  margin: 0 6px;
+}
+
+@media (max-width: 1400px) {
+  .discount {
+    margin: 50px 15%;
+  }
+}
+@media (max-width: 1200px) {
+  .discount {
+    margin: 50px 5%;
+  }
+}
+@media (max-width: 992px) {
+  .discount {
+    margin: 50px 10px;
+  }
+}
+@media (max-width: 576px) {
+  .discount {
+    margin: 10px 5px;
+  }
+}
+//1200 992 768 576

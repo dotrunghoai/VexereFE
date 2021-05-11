@@ -1,0 +1,61 @@
+@import "../Helper/Variable.scss";
+
+.message {
+  width: 960px;
+  margin: 20px auto;
+  text-align: center;
+}
+.message .message_icon {
+  width: 70px;
+  height: 70px;
+  line-height: 80px;
+  text-align: center;
+  border: 2px solid $blue;
+  border-radius: 50%;
+  display: inline-block;
+}
+.message .message_icon i {
+  font-size: 30px;
+  color: $blue;
+}
+.message .message_content span:nth-child(1) {
+  font-size: 30px;
+  color: $blue;
+  font-weight: bold;
+}
+.message .message_content span:nth-child(2) {
+  font-size: 30px;
+  margin-left: 15px;
+}
+.message .message_info {
+  text-align: left;
+  margin-top: 15px;
+}
+.message .message_id span:nth-child(2),
+.message .message_brand span:nth-child(2),
+.message .message_departureDate span:nth-child(2),
+.message .message_departureTime span:nth-child(2),
+.message .message_seat span:nth-child(2),
+.message .message_price span:nth-child(2) {
+  font-weight: bold;
+  color: $blue;
+}
+
+@media (max-width: 992px) {
+  .message {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .message {
+    width: 500px;
+  }
+  .message .message_content span {
+    font-size: 20px !important;
+  }
+}
+@media (max-width: 576px) {
+  .message {
+    width: 420px;
+  }
+}

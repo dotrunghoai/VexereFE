@@ -1,0 +1,18 @@
+@import "../Helper/Variable.scss";
+
+.admin {
+  display: flex;
+  .admin_content {
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin {
+    position: relative;
+  }
+}
+//1200 992 768 576

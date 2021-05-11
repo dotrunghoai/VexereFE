@@ -1,0 +1,75 @@
+@import "../Helper/Variable.scss";
+
+.user {
+  width: 960px;
+  margin: 10px auto;
+  .user_content {
+    display: flex;
+  }
+  .user_sidebar {
+    margin-top: 15px;
+    border: 1px solid $black;
+    width: 24%;
+    padding: 10px 0 0 10px;
+    height: 100%;
+    min-width: 180px;
+    a {
+      display: block !important;
+      color: black;
+      margin-bottom: 10px;
+    }
+    i {
+      font-size: 16px;
+    }
+    span {
+      margin-left: 10px;
+    }
+  }
+  .user_body {
+    width: 100%;
+    margin-left: 15px;
+    margin-top: 15px;
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 992px) {
+  .user {
+    width: 700px;
+  }
+  .user .user_sidebar {
+    width: 37%;
+  }
+}
+
+@media (max-width: 768px) {
+  .user {
+    width: 470px;
+  }
+  .user .user_sidebar {
+    width: 39%;
+  }
+  .user .user_sidebar,
+  .user .user_sidebar i {
+    font-size: 12px;
+  }
+  .user .user_sidebar a {
+    padding: 5px 4px;
+  }
+}
+
+//custom bootstrap
+.user .nav-pills .nav-link {
+  color: black;
+  transition: 0s !important;
+}
+.user .nav-pills .nav-link.active {
+  background-color: transparent;
+}
+.user .nav-pills .nav-link.active i {
+  color: black;
+}
+.user .nav-pills .nav-link.active span {
+  color: #007bff;
+}
+//---------------

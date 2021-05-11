@@ -1,0 +1,101 @@
+@import "../Helper/Variable.scss";
+
+.tripInfo {
+  width: 960px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.tripInfo .tripInfo_route {
+  width: 50%;
+  border: 1px solid $black;
+  height: 100%;
+}
+.tripInfo .tripInfo_route h6 {
+  padding: 40px 0;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid $black;
+  background-color: #ececec;
+}
+.tripInfo .tripInfo_route_content {
+  padding: 0 20px;
+}
+.tripInfo .tripInfo_route_item {
+  padding: 20px 0;
+  border-bottom: 1px solid $black;
+  display: flex;
+}
+.tripInfo .tripInfo_route_item span:nth-child(2) {
+  margin-left: auto;
+  font-weight: bold;
+}
+.tripInfo .tripInfo_route_item:nth-child(5) {
+  border-bottom: none;
+}
+.tripInfo .tripInfo_time {
+  border: 1px solid $black;
+  margin-left: 15px;
+}
+.tripInfo .tripInfo_time h6 {
+  padding: 30.5px 15px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 1px solid $black;
+  background-color: #ececec;
+}
+.tripInfo .tripInfo_time_content {
+  padding: 0 20px;
+}
+.tripInfo .tripInfo_brand {
+  float: left;
+  width: 35%;
+}
+.tripInfo .tripInfo_price {
+  float: left;
+  width: 20%;
+}
+.tripInfo .tripInfo_departureTime {
+  float: left;
+}
+.tripInfo .tripInfo_time_content p {
+  padding: 20px 0;
+  border-bottom: 1px solid $black;
+  margin-bottom: 0;
+}
+.tripInfo .tripInfo_brand p:nth-child(1),
+.tripInfo .tripInfo_price p:nth-child(1),
+.tripInfo .tripInfo_departureTime p:nth-child(1) {
+  font-weight: bold;
+}
+.tripInfo .tripInfo_brand p:nth-child(5),
+.tripInfo .tripInfo_price p:nth-child(5),
+.tripInfo .tripInfo_departureTime p:nth-child(5) {
+  border-bottom: none;
+}
+
+@media (max-width: 1050px) {
+  .tripInfo {
+    width: 800px;
+  }
+}
+@media (max-width: 850px) {
+  .tripInfo {
+    width: 450px;
+    display: block;
+  }
+  .tripInfo .tripInfo_route {
+    width: 100%;
+  }
+  .tripInfo .tripInfo_route h6,
+  .tripInfo .tripInfo_route_item,
+  .tripInfo .tripInfo_time_content p {
+    padding: 10px 0;
+  }
+  .tripInfo .tripInfo_time {
+    margin: 10px 0 0 0;
+  }
+  .tripInfo .tripInfo_time h6 {
+    padding: 10px 15px;
+  }
+}

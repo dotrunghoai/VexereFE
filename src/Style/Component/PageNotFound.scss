@@ -1,0 +1,26 @@
+.pagenotfound {
+  text-align: center;
+  img {
+    width: 50%;
+  }
+  p {
+    font-size: 20px;
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .pagenotfound {
+    img {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .pagenotfound {
+    img {
+      width: 100%;
+    }
+  }
+}

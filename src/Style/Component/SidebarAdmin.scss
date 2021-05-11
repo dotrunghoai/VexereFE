@@ -1,0 +1,92 @@
+@import "../Helper/Variable.scss";
+
+$white: rgba(255, 255, 255, 0.8);
+
+.admin_sidebar {
+  min-width: 220px;
+  padding: 10px;
+  border: 1px solid $blue;
+  background-color: $blue;
+  // height: 100%;
+  position: relative;
+  .admin_sidebar_content {
+    .sidebar_item {
+      a {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        &:hover .fa_DownUp,
+        &:hover .fa_IconHead,
+        &:hover .sidebar_text {
+          color: white;
+        }
+        .fa_IconHead {
+          color: $white;
+          font-size: 20px;
+        }
+        span {
+          color: $white;
+          font-size: 20px;
+          font-weight: bold;
+          margin-left: 15px;
+        }
+        .fa_DownUp {
+          margin-left: auto;
+          font-size: 20px;
+          color: $white;
+        }
+      }
+    }
+    .sidebar_itemSub {
+      padding-left: 40px;
+      a {
+        margin-bottom: 10px;
+        display: block;
+        font-weight: bold;
+        i {
+          color: $white;
+          font-size: 20px;
+          margin-right: 20px;
+          width: 20px;
+        }
+        span {
+          font-size: 20px;
+          color: $white;
+        }
+        &:hover i,
+        &:hover span {
+          color: white;
+        }
+      }
+    }
+  }
+  .btn-Close {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: -1px;
+    right: -23.6%;
+    display: none;
+    background-color: $blue;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin_sidebar {
+    // min-width: 0;
+    // max-width: 0;
+    // padding: 0;
+    // border: none;
+    position: absolute;
+    transform: translateX(-100%);
+    z-index: 11;
+    .btn-Close {
+      display: inline-block;
+    }
+  }
+}
