@@ -22,6 +22,7 @@ export default class TripAdminComponent extends Component {
         messContent: '',
         loadingWait: false,
         messContentComponent: '',
+        classN: '',
         statusAdd: true,
         stationList: [],
         carList: [],
@@ -106,6 +107,7 @@ export default class TripAdminComponent extends Component {
             statusAdd: true,
             messContent: '',
             messContentComponent: '',
+            classN: '',
             values: {
                 departurePlace: '',
                 arrivalPlace: '',
@@ -118,11 +120,31 @@ export default class TripAdminComponent extends Component {
         })
     }
     _handleSubmit = (obj) => {
+        const dTime = new Date(obj.departureTime)
+        const sDate = new Date(obj.startedDate);
+        const yy = sDate.getFullYear();
+        const mm = sDate.getMonth();
+        const dd = sDate.getDate();
+        const hh = dTime.getHours()
+        const minute = dTime.getMinutes()
+        const newDeparTime = new Date(yy, mm, dd, hh, minute, 0, 0)
+
+        const newObj = {
+            arrivalPlace: obj.arrivalPlace,
+            carID: obj.carID,
+            departurePlace: obj.departurePlace,
+            departureTime: newDeparTime,
+            price: obj.price,
+            startedDate: obj.startedDate,
+            tripID: obj.tripID
+        }
+        // console.log(newObj)
+        // return
         this.setState({
             loadingWait: true
         }, () => {
             this.state.statusAdd ?
-                tripService.postTrip(obj)
+                tripService.postTrip(newObj)
                     .then(res => {
                         let resultVal = res.data
                         resultVal.startedDate = this._getDate(resultVal.startedDate)
@@ -131,7 +153,9 @@ export default class TripAdminComponent extends Component {
                             rows: [...this.state.rows, resultVal],
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Created Trip Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -140,18 +164,20 @@ export default class TripAdminComponent extends Component {
                             loadingWait: false
                         })
                     }) :
-                tripService.updateTrip(obj)
+                tripService.updateTrip(newObj)
                     .then(res => {
                         let tripArr = [...this.state.rows]
-                        const index = tripArr.findIndex(item => item._id === obj.tripID)
-                        tripArr[index].startedDate = this._getDate(obj.startedDate)
-                        tripArr[index].departureTime = this._getTime(obj.departureTime)
-                        tripArr[index].price = obj.price
+                        const index = tripArr.findIndex(item => item._id === newObj.tripID)
+                        tripArr[index].startedDate = this._getDate(newObj.startedDate)
+                        tripArr[index].departureTime = this._getTime(newObj.departureTime)
+                        tripArr[index].price = newObj.price
                         this.setState({
                             rows: tripArr,
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Updated Trip Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -167,7 +193,7 @@ export default class TripAdminComponent extends Component {
             <div className='tripAdmin'>
                 {
                     this.state.messContentComponent ?
-                        <div className="text-center alert alert-danger">{this.state.messContentComponent}</div> : ''
+                        <div className={this.state.classN}>{this.state.messContentComponent}</div> : ''
                 }
                 <button onClick={this._showNewModal} className="btn-primary btn btnAddNew m-2">
                     <i className="fa fa-plus mr-2"></i>
@@ -345,11 +371,12 @@ export default class TripAdminComponent extends Component {
                                         statusAdd: false,
                                         messContent: '',
                                         messContentComponent: '',
+                                        classN: '',
                                         visibleModal: true,
                                         values: {
                                             departurePlace: rowData.departurePlace._id,
                                             arrivalPlace: rowData.arrivalPlace._id,
-                                            startedDate: rowData.startedDate,
+                                            startedDate: new Date(rowData.startedDate),
                                             departureTime: new Date(2020, 1, 1, hh, mm),
                                             carID: rowData.carID._id,
                                             price: rowData.price,
@@ -384,13 +411,16 @@ export default class TripAdminComponent extends Component {
                                                 data.splice(data.indexOf(oldData), 1)
                                                 this.setState({
                                                     rows: data,
-                                                    isLoading: false
+                                                    isLoading: false,
+                                                    messContentComponent: "Deleted Trip Successfully!",
+                                                    classN: 'text-center alert alert-success',
                                                 })
                                             })
                                             .catch(err => {
                                                 console.log(err)
                                                 this.setState({
                                                     messContentComponent: err.response.data.message,
+                                                    classN: 'text-center alert alert-danger',
                                                     isLoading: false
                                                 })
                                             })

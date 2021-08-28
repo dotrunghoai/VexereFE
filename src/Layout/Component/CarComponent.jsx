@@ -14,6 +14,7 @@ export default class CarComponent extends Component {
         messContent: '',
         loadingWait: false,
         messContentComponent: '',
+        classN: '',
         statusAdd: true,
         brandList: [],
         values: {
@@ -61,6 +62,7 @@ export default class CarComponent extends Component {
             statusAdd: true,
             messContent: '',
             messContentComponent: '',
+            classN: '',
             values: {
                 brandID: '',
                 licensePlate: '',
@@ -80,7 +82,9 @@ export default class CarComponent extends Component {
                             rows: [...this.state.rows, res.data],
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Created Car Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -98,7 +102,9 @@ export default class CarComponent extends Component {
                             rows: carArr,
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Updated Car Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -114,7 +120,7 @@ export default class CarComponent extends Component {
             <div className='car'>
                 {
                     this.state.messContentComponent ?
-                        <div className="text-center alert alert-danger">{this.state.messContentComponent}</div> : ''
+                        <div className={this.state.classN}>{this.state.messContentComponent}</div> : ''
                 }
                 <button onClick={this._showNewModal} className="btn-primary btn btnAddNew m-2">
                     <i className="fa fa-plus mr-2"></i>
@@ -224,6 +230,7 @@ export default class CarComponent extends Component {
                                         statusAdd: false,
                                         messContent: '',
                                         messContentComponent: '',
+                                        classN: '',
                                         visibleModal: true,
                                         values: {
                                             brandID: rowData.brandID._id,
@@ -255,13 +262,16 @@ export default class CarComponent extends Component {
                                                 data.splice(data.indexOf(oldData), 1)
                                                 this.setState({
                                                     rows: data,
-                                                    isLoading: false
+                                                    isLoading: false,
+                                                    messContentComponent: "Deleted Car Successfully!",
+                                                    classN: 'text-center alert alert-success',
                                                 })
                                             })
                                             .catch(err => {
                                                 console.log(err)
                                                 this.setState({
                                                     messContentComponent: err.response.data.message,
+                                                    classN: 'text-center alert alert-danger',
                                                     isLoading: false
                                                 })
                                             })

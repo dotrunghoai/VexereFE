@@ -20,7 +20,8 @@ export default class BrandComponent extends Component {
             hotline: ''
         },
         statusAdd: true,
-        messContentComponent: ''
+        messContentComponent: '',
+        classN: ''
     }
     componentDidMount() {
         this.setState({
@@ -57,7 +58,9 @@ export default class BrandComponent extends Component {
                             rows: [...this.state.rows, res.data],
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Created Brand Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -77,7 +80,9 @@ export default class BrandComponent extends Component {
                             rows: brandArr,
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Updated Brand Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -94,6 +99,7 @@ export default class BrandComponent extends Component {
             statusAdd: true,
             messContent: '',
             messContentComponent: '',
+            classN: '',
             values: {
                 brandCode: '',
                 brandName: '',
@@ -107,7 +113,7 @@ export default class BrandComponent extends Component {
             <div className='brand'>
                 {
                     this.state.messContentComponent ?
-                        <div className="text-center alert alert-danger">{this.state.messContentComponent}</div> : ''
+                        <div className={this.state.classN}>{this.state.messContentComponent}</div> : ''
                 }
                 <button onClick={this._showNewModal} className="btn-primary btn btnAddNew m-2">
                     <i className="fa fa-plus mr-2"></i>
@@ -207,6 +213,7 @@ export default class BrandComponent extends Component {
                                         statusAdd: false,
                                         messContent: '',
                                         messContentComponent: '',
+                                        classN: '',
                                         visibleModal: true,
                                         values: {
                                             brandCode: rowData.brandCode,
@@ -262,14 +269,17 @@ export default class BrandComponent extends Component {
                                                 data.splice(data.indexOf(oldData), 1)
                                                 this.setState({
                                                     rows: data,
-                                                    isLoading: false
+                                                    isLoading: false,
+                                                    messContentComponent: "Deleted Brand Successfully!",
+                                                    classN: 'text-center alert alert-success',
                                                 })
                                             })
                                             .catch(err => {
                                                 console.log(err)
                                                 this.setState({
                                                     messContentComponent: err.response.data.message,
-                                                    isLoading: false
+                                                    classN: 'text-center alert alert-danger',
+                                                    isLoading: false,
                                                 })
                                             })
                                         resolve();

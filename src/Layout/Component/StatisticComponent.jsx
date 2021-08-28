@@ -12,50 +12,30 @@ export default class StatisticComponent extends Component {
         <h4>Hệ thống vé xe khách và vé xe limousine lớn nhất Việt Nam</h4>
         <div className="statistic_content">
           <div className="statistic_item">
-            <img
-              src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-1.svg"
-              alt="tuyen duong"
-            />
+            <img src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-1.svg" alt="tuyen duong" />
             <div className="statistic_detail">
-              <h3>
-                <CountUp end={5000} />+
-              </h3>
+              <h3><CountUp end={5000} />+</h3>
               <span>Tuyến đường</span>
             </div>
           </div>
           <div className="statistic_item">
-            <img
-              src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-2.svg"
-              alt="nha xe"
-            />
+            <img src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-2.svg" alt="nha xe" />
             <div className="statistic_detail">
-              <h3>
-                <CountUp end={2000} />+
-              </h3>
+              <h3><CountUp end={2000} />+</h3>
               <span>Nhà xe</span>
             </div>
           </div>
           <div className="statistic_item">
-            <img
-              src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-3.svg"
-              alt="dai ly ban ve"
-            />
+            <img src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-3.svg" alt="dai ly ban ve" />
             <div className="statistic_detail">
-              <h3>
-                <CountUp end={5000} />+
-              </h3>
+              <h3> <CountUp end={5000} />+</h3>
               <span>Đại lý bán vé</span>
             </div>
           </div>
           <div className="statistic_item">
-            <img
-              src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-4.svg"
-              alt="ben xe"
-            />
+            <img src="https://storage.googleapis.com/fe-production/svgIcon/static-icon-4.svg" alt="ben xe" />
             <div className="statistic_detail">
-              <h3>
-                <CountUp end={400} />+
-              </h3>
+              <h3> <CountUp end={400} />+</h3>
               <span>Bến xe</span>
             </div>
           </div>

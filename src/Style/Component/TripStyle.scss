@@ -1,18 +1,26 @@
 .trip_content {
   width: 991px;
   margin: 0 auto;
+  display: flex;
 }
 
 @media (max-width: 1050px) {
   .trip_content {
     width: 800px;
   }
-  .trip_content .container-fluid {
+  .trip_content {
     padding: 0 0;
   }
 }
 @media (max-width: 850px) {
   .trip_content {
     width: 450px;
+  }
+}
+
+@media (max-width: 576px) {
+  .trip_content {
+    margin-left: 13px;
+    width: 350px;
   }
 }

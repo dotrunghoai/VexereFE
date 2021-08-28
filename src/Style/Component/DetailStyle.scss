@@ -1,5 +1,8 @@
 @import "../Helper/Variable.scss";
 
+.detail {
+  margin-left: 15px;
+}
 .detail .detail_content {
   margin-top: 20px;
   max-height: 3000px;
@@ -176,5 +179,20 @@
 @media (max-width: 765px) {
   .detail .detail_content {
     width: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .detail {
+    margin-left: 0;
+    .detail_title {
+      font-size: 14px;
+    }
+    .detail_filter {
+      display: none !important;
+    }
+    .detail_content {
+      margin-top: 5px;
+    }
   }
 }

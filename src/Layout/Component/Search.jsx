@@ -7,9 +7,14 @@ import { createAction } from '../../Redux/Action';
 import { ADD_INFO_TRIP } from '../../Redux/Action/typeAction';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { tripService } from '../../Service';
 import { fetchTripAsync } from '../../Redux/Action/tripActionAsync';
-// const moment = require('moment')
+import { Portal } from "react-overlays"
+
+const CalendarContainer = ({ children }) => {
+    const el = document.getElementById("calendar-portal");
+
+    return <Portal container={el}>{children}</Portal>;
+};
 
 const ProviceList = [
     { Title: "Hà Nội" },
@@ -82,27 +87,17 @@ class Search extends Component {
     state = {
         date: new Date(),
         loadingWait: false,
-        // values: {
-        //     departureProvice: 'Hà Nội',
-        //     arrivalProvice: 'Hồ Chí Minh',
-        //     startedDate: new Date(new Date().setHours(0, 0, 0, 0))
-        // },
     };
     _handleSubmit = (obj) => {
-        const newObj = {
-            departureProvice: obj.departureProvice,
-            arrivalProvice: obj.arrivalProvice,
-            startedDate: "2021-05-05T17:00:00.000+00:00"
-        }
         this.setState({
             loadingWait: true
         }, () => {
-            this.props.dispatch(fetchTripAsync(newObj, () => {
+            this.props.dispatch(fetchTripAsync(obj, () => {
                 this.setState({
                     loadingWait: false
                 }, () => {
-                    this.props.history.push(`/trip?departureProvice=${obj.departureProvice}&arrivalProvice=${obj.arrivalProvice}&startedDate=${obj.startedDate}`)
                     this.props.dispatch(createAction(ADD_INFO_TRIP, obj))
+                    this.props.history.push(`/trip?departureProvice=${obj.departureProvice}&arrivalProvice=${obj.arrivalProvice}&startedDate=${obj.startedDate}`)
                 })
             }))
         })
@@ -144,6 +139,7 @@ class Search extends Component {
                                 <DatePicker
                                     className="carousel_dateInput"
                                     selected={values.startedDate}
+                                    popperContainer={CalendarContainer}
                                     dateFormat="dd-MM-yyyy"
                                     onChange={(d) => {
                                         setFieldValue("startedDate", d)

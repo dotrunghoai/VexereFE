@@ -7,6 +7,9 @@ import { valiStationSchema } from '../../Service/stationService';
 import LoadingComponent from '../Helper/LoadingComponent'
 
 const ProviceList = [
+    { Title: "Hà Nội" },
+    { Title: "Hồ Chí Minh" },
+    { Title: "Đà Nẵng" },
     { Title: "An Giang" },
     { Title: "Bạc Liêu" },
     { Title: "Bắc Kạn" },
@@ -20,7 +23,6 @@ const ProviceList = [
     { Title: "Cà Mau" },
     { Title: "Cao Bằng" },
     { Title: "Cần Thơ" },
-    { Title: "Đà Nẵng" },
     { Title: "Đắk Lắk" },
     { Title: "Đắk Nông" },
     { Title: "Điện Biên" },
@@ -29,13 +31,11 @@ const ProviceList = [
     { Title: "Gia Lai" },
     { Title: "Hà Giang" },
     { Title: "Hà Nam" },
-    { Title: "Hà Nội" },
     { Title: "Hà Tây" },
     { Title: "Hà Tĩnh" },
     { Title: "Hải Dương" },
     { Title: "Hải Phòng" },
     { Title: "Hòa Bình" },
-    { Title: "Hồ Chí Minh" },
     { Title: "Hậu Giang" },
     { Title: "Huế" },
     { Title: "Hưng Yên" },
@@ -73,6 +73,73 @@ const ProviceList = [
     { Title: "Yên Bái" },
 ]
 
+// const ProviceList = [
+//     { Title: "An Giang" },
+//     { Title: "Bạc Liêu" },
+//     { Title: "Bắc Kạn" },
+//     { Title: "Bắc Giang" },
+//     { Title: "Bắc Ninh" },
+//     { Title: "Bến Tre" },
+//     { Title: "Bình Dương" },
+//     { Title: "Bình Định" },
+//     { Title: "Bình Phước" },
+//     { Title: "Bình Thuận" },
+//     { Title: "Cà Mau" },
+//     { Title: "Cao Bằng" },
+//     { Title: "Cần Thơ" },
+//     { Title: "Đà Nẵng" },
+//     { Title: "Đắk Lắk" },
+//     { Title: "Đắk Nông" },
+//     { Title: "Điện Biên" },
+//     { Title: "Đồng Nai" },
+//     { Title: "Đồng Tháp" },
+//     { Title: "Gia Lai" },
+//     { Title: "Hà Giang" },
+//     { Title: "Hà Nam" },
+//     { Title: "Hà Nội" },
+//     { Title: "Hà Tây" },
+//     { Title: "Hà Tĩnh" },
+//     { Title: "Hải Dương" },
+//     { Title: "Hải Phòng" },
+//     { Title: "Hòa Bình" },
+//     { Title: "Hồ Chí Minh" },
+//     { Title: "Hậu Giang" },
+//     { Title: "Huế" },
+//     { Title: "Hưng Yên" },
+//     { Title: "Khánh Hòa" },
+//     { Title: "Kiên Giang" },
+//     { Title: "Kon Tum" },
+//     { Title: "Lai Châu" },
+//     { Title: "Lào Cai" },
+//     { Title: "Lạng Sơn" },
+//     { Title: "Lâm Đồng" },
+//     { Title: "Long An" },
+//     { Title: "Nam Định" },
+//     { Title: "Nghệ An" },
+//     { Title: "Ninh Bình" },
+//     { Title: "Ninh Thuận" },
+//     { Title: "Phú Thọ" },
+//     { Title: "Phú Yên" },
+//     { Title: "Quảng Bình" },
+//     { Title: "Quảng Nam" },
+//     { Title: "Quảng Ngãi" },
+//     { Title: "Quảng Ninh" },
+//     { Title: "Quảng Trị" },
+//     { Title: "Sóc Trăng" },
+//     { Title: "Sơn La" },
+//     { Title: "Tây Ninh" },
+//     { Title: "Thái Bình" },
+//     { Title: "Thái Nguyên" },
+//     { Title: "Thanh Hóa" },
+//     { Title: "Tiền Giang" },
+//     { Title: "Trà Vinh" },
+//     { Title: "Tuyên Quang" },
+//     { Title: "Vĩnh Long" },
+//     { Title: "Vĩnh Phúc" },
+//     { Title: "Vũng Tàu" },
+//     { Title: "Yên Bái" },
+// ]
+
 export default class StationComponent extends Component {
     state = {
         rows: [],
@@ -82,6 +149,7 @@ export default class StationComponent extends Component {
         loadingWait: false,
         statusAdd: true,
         messContentComponent: '',
+        classN: '',
         values: {
             stationCode: '',
             stationName: '',
@@ -124,7 +192,9 @@ export default class StationComponent extends Component {
                             rows: [...this.state.rows, res.data],
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Created Station Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -144,7 +214,9 @@ export default class StationComponent extends Component {
                             rows: stationArr,
                             visibleModal: false,
                             messContent: '',
-                            loadingWait: false
+                            loadingWait: false,
+                            messContentComponent: 'Updated Station Successfully!',
+                            classN: 'text-center alert alert-success'
                         })
                     })
                     .catch(err => {
@@ -161,6 +233,7 @@ export default class StationComponent extends Component {
             statusAdd: true,
             messContent: '',
             messContentComponent: '',
+            classN: '',
             values: {
                 stationCode: '',
                 stationName: '',
@@ -174,7 +247,7 @@ export default class StationComponent extends Component {
             <div className='station'>
                 {
                     this.state.messContentComponent ?
-                        <div className="text-center alert alert-danger">{this.state.messContentComponent}</div> : ''
+                        <div className={this.state.classN}>{this.state.messContentComponent}</div> : ''
                 }
                 <button onClick={this._showNewModal} className="btn-primary btn btnAddNew m-2">
                     <i className="fa fa-plus mr-2"></i>
@@ -283,6 +356,7 @@ export default class StationComponent extends Component {
                                         statusAdd: false,
                                         messContent: '',
                                         messContentComponent: '',
+                                        classN: '',
                                         visibleModal: true,
                                         values: {
                                             stationCode: rowData.stationCode,
@@ -316,13 +390,16 @@ export default class StationComponent extends Component {
                                                 data.splice(data.indexOf(oldData), 1)
                                                 this.setState({
                                                     rows: data,
-                                                    isLoading: false
+                                                    isLoading: false,
+                                                    messContentComponent: "Deleted Station Successfully!",
+                                                    classN: 'text-center alert alert-success',
                                                 })
                                             })
                                             .catch(err => {
                                                 console.log(err)
                                                 this.setState({
                                                     messContentComponent: err.response.data.message,
+                                                    classN: 'text-center alert alert-danger',
                                                     isLoading: false
                                                 })
                                             })

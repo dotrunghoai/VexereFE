@@ -21,11 +21,11 @@ class DetailComponent extends Component {
   }
   render() {
     return (
-      <div className="col-9 detail">
+      <div className="detail">
         {
           this.props.tripArr.length === 0 ?
-            <div className='text-center'>
-              <h4>Vé xe đi từ {this.props.departureProvice} đến {this.props.arrivalProvice}: 0 chuyến</h4>
+            <div className='detail_fail text-center'>
+              <h4 className="mb-5 detail_title">Vé xe đi từ {this.props.departureProvice} đến {this.props.arrivalProvice}: 0 chuyến</h4>
               <img width='70%' src={NotFoundTrip} alt="" />
               <p style={{ marginTop: 10, fontSize: '25px', fontWeight: 500, marginBottom: 10 }}>Chuyến đang cập nhật</p>
               <p className='mb-0'>Hiện tại VeXeRe.com chưa có thông tin nhà xe đi từ {this.props.departureProvice} đến {this.props.arrivalProvice} vào ngày {new Date(this.props.startedDate).toLocaleDateString([], { day: '2-digit', month: '2-digit', year: 'numeric' })}.</p>
@@ -34,7 +34,7 @@ class DetailComponent extends Component {
             <>
               <h4 className="mb-5 detail_title">
                 Vé xe đi từ {this.props.departureProvice} đến {this.props.arrivalProvice}: {this.props.tripArr.length} chuyến
-        </h4>
+              </h4>
               <div className="d-flex detail_filter">
                 <span className="font-weight-bold mr-5">Sắp xếp theo:</span>
                 <span className="mr-5">Giờ sớm nhất</span>

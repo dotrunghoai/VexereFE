@@ -91,7 +91,7 @@ class DetailContentComponent extends Component {
         return (
             <div className="detail_item">
                 <div className="detail_item_info">
-                    <img src={detail_1} alt="trip" />
+                    <img src={detail_3} alt="trip" />
                     <div className="detail_item_car">
                         <span className="detail_tenhangxe">{brandName}</span>
                         <span className="detail_rate">

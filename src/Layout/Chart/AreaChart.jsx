@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Chart from "react-apexcharts";
 
-export default class BarChart extends Component {
+export default class AreaChart extends Component {
     state = {
         series: [{
             name: 'series1',

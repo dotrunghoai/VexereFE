@@ -6,7 +6,7 @@ import { Slider, Switch } from "antd";
 export default class FilterComponent extends Component {
   render() {
     return (
-      <div className="filter col-3">
+      <div className="filter">
         <div className="d-flex">
           <span className="boloctimkiem">Bộ lọc tìm kiếm</span>
           <span className="xoaloc ml-auto">Xoá lọc</span>

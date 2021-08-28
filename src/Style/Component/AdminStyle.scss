@@ -15,4 +15,10 @@
     position: relative;
   }
 }
+
+@media (max-width: 576px) {
+  .admin {
+    max-width: 350px !important;
+  }
+}
 //1200 992 768 576

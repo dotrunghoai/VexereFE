@@ -15,12 +15,12 @@ class MessageComponent extends Component {
           <i className="fa fa-check"></i>
         </div>
         <div className="message_content">
-          <span>THANK YOU!</span>
+          <span className='thanks'>THANK YOU!</span>
           <span>Your Order Has Been Processed</span>
         </div>
         <div className="message_info">
           <div className="message_id">
-            <span>Your order number is: </span>
+            <span>Your order no is: </span>
             <span>{trip.orderID}</span>
           </div>
           <div className="message_brand">

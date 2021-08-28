@@ -11,6 +11,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.search_content_head {
+  margin-bottom: 5px;
+}
 .search .vexekhach,
 .search .xeditu {
   text-decoration: none;
@@ -146,5 +149,23 @@
   }
   .search .datvede span {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .search {
+    margin-top: 5px;
+    .search_content_head {
+      a,
+      span {
+        font-size: 14px;
+      }
+    }
+    .datvede {
+      margin-top: 5px !important;
+      span {
+        display: block;
+      }
+    }
   }
 }

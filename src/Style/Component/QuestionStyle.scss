@@ -53,3 +53,13 @@
     padding: 10px;
   }
 }
+
+@media (max-width: 576px) {
+  .question {
+    width: 100%;
+    .question_sidebar,
+    .question_content .question_item span {
+      font-size: 12px;
+    }
+  }
+}

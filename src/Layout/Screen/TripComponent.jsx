@@ -16,12 +16,8 @@ export default class TripComponent extends Component {
       <div>
         <SearchComponent />
         <div className="trip_content">
-          <div className="container-fluid">
-            <div className="row">
-              <FilterComponent />
-              <DetailComponent />
-            </div>
-          </div>
+          <FilterComponent />
+          <DetailComponent />
         </div>
         <QuestionComponent />
         <TripInfoComponent />

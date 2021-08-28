@@ -33,3 +33,9 @@
     padding: 3px;
   }
 }
+
+@media (max-width: 576px) {
+  .filter {
+    display: none;
+  }
+}

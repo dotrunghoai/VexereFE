@@ -87,4 +87,35 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 576px) {
+  .statistic_detail {
+    margin-left: 11px;
+    h3,
+    span {
+      font-size: 13px;
+    }
+    h3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .statistic_item {
+    width: 100%;
+  }
+  .brand_content {
+    .brand_item {
+      h6 {
+        font-size: 13px;
+      }
+    }
+  }
+}
 // 1200 992 768 576

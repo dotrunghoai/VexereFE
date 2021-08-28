@@ -106,3 +106,14 @@
     margin-top: 10px;
   }
 }
+
+@media (max-width: 850px) {
+  .booking {
+    .booking_note {
+      margin-right: 16px;
+      h6 {
+        font-size: 13px;
+      }
+    }
+  }
+}

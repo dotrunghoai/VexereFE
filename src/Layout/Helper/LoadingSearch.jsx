@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down(992)]: {
             width: '400px',
         },
+        [theme.breakpoints.down(576)]: {
+            width: '300px',
+        },
         '& > * + *': {
             marginLeft: theme.spacing(2),
         },

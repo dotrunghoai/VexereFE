@@ -20,7 +20,6 @@
       border: 0.1px solid white;
       padding: 15px 50px 15px 25px;
       width: 183px;
-      // z-index: 1600 !important;
     }
     .carousel_fromInput:focus,
     .carousel_toInput:focus,
@@ -124,6 +123,19 @@
       }
       .carouselSelect span {
         font-size: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel_input {
+    form {
+      .carousel_fromInput,
+      .carousel_toInput,
+      .carousel_dateInput,
+      .carousel_search {
+        width: 300px;
       }
     }
   }

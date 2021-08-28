@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Chart from 'react-apexcharts'
+import { orderService } from '../../Service'
 
 export default class DonutChart extends Component {
     state = {
@@ -13,15 +14,42 @@ export default class DonutChart extends Component {
                         }
                     }
                 }
-            ]
+            ],
+            title: {
+                text: 'Top 5 hãng xe được book nhiều nhất',
+                align: 'center',
+                style: {
+                    fontFamily: 'Time New Romans',
+                    fontSize: '18px'
+                },
+            },
+            labels: [],
+            noData: {
+                text: 'Loading...',
+                offsetY: -30,
+                style: {
+                    fontSize: 45,
+                }
+            }
         },
-        series: [44, 55, 41, 17, 15],
-        labels: ['A', 'B', 'C', 'D', 'E']
+        series: [],
+    }
+    componentDidMount() {
+        orderService.getTop5Brand()
+            .then(res => {
+                this.setState({
+                    options: { ...this.state.options, labels: res.data.labelArr },
+                    series: res.data.seriesArr,
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     render() {
         return (
             <div className="donut">
-                <Chart options={this.state.options} series={this.state.series} type="donut" width="380" />  {/* type='pie' */}
+                <Chart options={this.state.options} series={this.state.series} type="pie" width="380" />  {/* type='donut' 'pie' */}
             </div>
         )
     }

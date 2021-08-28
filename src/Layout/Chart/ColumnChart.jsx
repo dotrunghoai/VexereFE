@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Chart from "react-apexcharts";
+import { orderService } from '../../Service';
 
 export default class ColumnChart extends Component {
     state = {
@@ -13,12 +14,12 @@ export default class ColumnChart extends Component {
                 }
             },
             xaxis: {
-                categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+                categories: [],
                 tickPlacement: 'on'
             },
             title: {
-                text: 'Doanh thu theo từng tháng',
-                align: 'center',
+                text: 'Top 5 bến xe được book nhiều nhất',
+                align: 'left',
                 style: {
                     fontFamily: 'Time New Romans',
                     fontSize: '18px'
@@ -31,20 +32,66 @@ export default class ColumnChart extends Component {
                         chart: {
                             width: 400
                         },
+                        // title: {
+                        //     align: 'left'
+                        // }
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    options: {
+                        chart: {
+                            width: 350,
+                            toolbar: {
+                                show: false
+                            }
+                        },
                         title: {
-                            align: 'left'
+                            align: 'center'
                         }
                     }
                 }
-            ]
+            ],
+            yaxis: {
+                title: {
+                    text: 'Số lần book',
+                    style: {
+                        fontFamily: 'Time New Romans',
+                        fontSize: 15
+                    }
+                },
+                labels: {
+                    formatter: (value) => { return value },
+                }
+            },
+            noData: {
+                text: 'Loading...',
+                offsetX: 30,
+                offsetY: -30,
+                style: {
+                    fontSize: 45,
+                }
+            }
         },
         series: [
-            {
-                name: "series-1",
-                data: [30, 40, 45, 50, 49, 60, 70, 91]
-            }
+            // {
+            //     name: "Profit",
+            //     data: []
+            // }
         ]
     };
+    componentDidMount() {
+        orderService.getTop5Station()
+            .then(res => {
+                this.setState({
+                    series: [...this.state.series, { name: 'Số lần đặt', data: res.data.dataArr }],
+                    options: { ...this.state.options, xaxis: { ...this.state.xaxis, categories: res.data.categoryArr } }
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
     render() {
         return (
             <Chart

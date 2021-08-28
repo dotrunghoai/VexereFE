@@ -61,11 +61,12 @@ class TripService {
         })
     }
     fetchTripByProvice = (data) => {
-        // console.log(data)
+        const encodeDepar = encodeURIComponent(data.departureProvice)
+        const encodeArr = encodeURIComponent(data.arrivalProvice)
+        const encodeStart = encodeURIComponent(data.startedDate)
         return Axios({
             method: 'GET',
-            url: `http://vexere-hoai.herokuapp.com/tripByProvice`,
-            data,
+            url: `http://vexere-hoai.herokuapp.com/tripByProvice?departureProvice=${encodeDepar}&arrivalProvice=${encodeArr}&startedDate=${encodeStart}`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }

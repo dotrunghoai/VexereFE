@@ -52,18 +52,6 @@ export default class UserAdminComponent extends Component {
                             },
                             loadingType: 'linear'
                         }}
-                        actions={[
-                            {
-                                icon: 'edit',
-                                tooltip: 'Edit Brand',
-                                onClick: (event, rowData) => alert('You are editing ' + rowData.departurePlace)
-                            },
-                            {
-                                icon: 'delete',
-                                tooltip: 'Delete Brand',
-                                onClick: (event, rowData) => alert('You want to delete ' + rowData.departurePlace)
-                            }
-                        ]}
                         columns={[
                             { title: 'Username', field: 'username' },
                             { title: 'Email', field: 'email' },
