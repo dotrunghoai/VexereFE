@@ -17,7 +17,7 @@ export default class FooterComponent extends Component {
           Giấy chứng nhận ĐKKD số 0315133726 do Sở KH và ĐT TP. Hồ Chí Minh cấp
           lần đầu ngày 27/6/2018
         </span>
-        <span>Bản quyền © 2020 thuộc về VeXeRe.Com</span>
+        <span>Bản quyền © 2020 thuộc về VeXeRe.Com (Đỗ Trung Hoài Edited)</span>
       </div>
     );
   }
