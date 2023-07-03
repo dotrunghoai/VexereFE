@@ -1,10 +1,13 @@
-# Deploy to surge.sh
+# Domain
+<a href='vexere.surge.sh' target='blank'>vexere.surge.sh</a>
+
+## Deploy to surge.sh
 
 - `sudo npm install --global surge` if don't have surge before
 - `npm install`
 - `npm run deploy`
 
-## Account Admin
+### Account Admin
 - username: `admin`
 - password: `admin`
 
