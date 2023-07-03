@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import * as yup from 'yup'
+import { urlGlobal } from './url';
 
 export const valiUserSchema = yup.object().shape({
     email: yup.string().required("Email không được để trống!").email("Email không đúng định dạng!"),
@@ -21,21 +22,21 @@ class UserService {
     signUp = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/signup',
+            url: `${urlGlobal}/signup`,
             data
         })
     }
     signIn = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/signin',
+            url: `${urlGlobal}/signin`,
             data
         })
     }
     signOut = () => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/signout',
+            url: `${urlGlobal}/signout`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -44,13 +45,13 @@ class UserService {
     fetchUser = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/user'
+            url: `${urlGlobal}/user`
         })
     }
     updateUser = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/updateUser',
+            url: `${urlGlobal}/updateUser`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -60,7 +61,7 @@ class UserService {
     updatePassword = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/updatePassword',
+            url: `${urlGlobal}/updatePassword`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')

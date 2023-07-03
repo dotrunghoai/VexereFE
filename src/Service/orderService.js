@@ -1,16 +1,17 @@
 import Axios from 'axios'
+import { urlGlobal } from './url';
 
 class OrderService {
     fetchOrder = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/order'
+            url: `${urlGlobal}/order`
         })
     }
     fetchOrderFutureByUser = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/orderFutureByUser',
+            url: `${urlGlobal}/orderFutureByUser`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -19,7 +20,7 @@ class OrderService {
     fetchOrderPassByUser = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/orderPassByUser',
+            url: `${urlGlobal}/orderPassByUser`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -28,7 +29,7 @@ class OrderService {
     deleteOrder = (orderID) => {
         return Axios({
             method: "DELETE",
-            url: `http://vexere-hoai.herokuapp.com/order?orderID=${orderID}`,
+            url: `${urlGlobal}/order?orderID=${orderID}`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -37,7 +38,7 @@ class OrderService {
     getTop5Station = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/top5Station',
+            url: `${urlGlobal}/top5Station`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -46,7 +47,7 @@ class OrderService {
     getTop5Brand = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/top5Brand',
+            url: `${urlGlobal}/top5Brand`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -55,7 +56,7 @@ class OrderService {
     getCountOrder = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/countOrder',
+            url: `${urlGlobal}/countOrder`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -64,7 +65,7 @@ class OrderService {
     getProfit6Month = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/profit6Month',
+            url: `${urlGlobal}/profit6Month`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }

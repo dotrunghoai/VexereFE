@@ -1,0 +1,1 @@
+export const urlGlobal = "https://vexere-rpau.onrender.com";

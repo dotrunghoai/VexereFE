@@ -4,4 +4,8 @@
 - `npm install`
 - `npm run deploy`
 
+## Account Admin
+- username: `admin`
+- password: `admin`
+
 Good luck <3

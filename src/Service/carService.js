@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import * as yup from 'yup'
+import { urlGlobal } from './url';
 
 export const valiCarSchema = yup.object().shape({
     brandID: yup.string().required("Brand Name không được để trống!"),
@@ -12,7 +13,7 @@ class CarService {
     fetchCar = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/car',
+            url: `${urlGlobal}/car`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -21,7 +22,7 @@ class CarService {
     postCar = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/car',
+            url: `${urlGlobal}/car`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -31,7 +32,7 @@ class CarService {
     updateCar = (data) => {
         return Axios({
             method: 'PATCH',
-            url: 'http://vexere-hoai.herokuapp.com/car',
+            url: `${urlGlobal}/car`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -41,7 +42,7 @@ class CarService {
     deleteCar = (licensePlate) => {
         return Axios({
             method: 'DELETE',
-            url: `http://vexere-hoai.herokuapp.com/car?licensePlate=${licensePlate}`,
+            url: `${urlGlobal}/car?licensePlate=${licensePlate}`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }

@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import * as yup from 'yup';
+import { urlGlobal } from './url';
 
 export const valiTripSchema = yup.object().shape({
     departurePlace: yup.string().required("Departure Place không được để trống!"),
@@ -15,7 +16,7 @@ class TripService {
     fetchTrip = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/alltrip',
+            url: `${urlGlobal}/alltrip`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -24,7 +25,7 @@ class TripService {
     postTrip = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/trip',
+            url: `${urlGlobal}/trip`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -34,7 +35,7 @@ class TripService {
     updateTrip = (data) => {
         return Axios({
             method: 'PATCH',
-            url: 'http://vexere-hoai.herokuapp.com/trip',
+            url: `${urlGlobal}/trip`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -44,7 +45,7 @@ class TripService {
     deleteTrip = (tripID) => {
         return Axios({
             method: 'DELETE',
-            url: `http://vexere-hoai.herokuapp.com/trip?tripID=${tripID}`,
+            url: `${urlGlobal}/trip?tripID=${tripID}`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -53,7 +54,7 @@ class TripService {
     bookTrip = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/bookTrip',
+            url: `${urlGlobal}/bookTrip`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -66,7 +67,7 @@ class TripService {
         const encodeStart = encodeURIComponent(data.startedDate)
         return Axios({
             method: 'GET',
-            url: `http://vexere-hoai.herokuapp.com/tripByProvice?departureProvice=${encodeDepar}&arrivalProvice=${encodeArr}&startedDate=${encodeStart}`,
+            url: `${urlGlobal}/tripByProvice?departureProvice=${encodeDepar}&arrivalProvice=${encodeArr}&startedDate=${encodeStart}`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }

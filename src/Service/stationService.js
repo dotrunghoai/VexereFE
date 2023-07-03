@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import * as yup from 'yup'
+import { urlGlobal } from './url';
 
 export const valiStationSchema = yup.object().shape({
     stationCode: yup.string().required('Station Code không được để trống!'),
@@ -12,7 +13,7 @@ class StationService {
     fetchStation = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/station',
+            url: `${urlGlobal}/station`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -21,7 +22,7 @@ class StationService {
     postStation = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/station',
+            url: `${urlGlobal}/station`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -31,7 +32,7 @@ class StationService {
     updateStation = (data) => {
         return Axios({
             method: 'PATCH',
-            url: 'http://vexere-hoai.herokuapp.com/station',
+            url: `${urlGlobal}/station`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -41,7 +42,7 @@ class StationService {
     deleteStation = (stationCode) => {
         return Axios({
             method: 'DELETE',
-            url: `http://vexere-hoai.herokuapp.com/station?stationCode=${stationCode}`,
+            url: `${urlGlobal}/station?stationCode=${stationCode}`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }

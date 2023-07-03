@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import * as yup from 'yup'
+import { urlGlobal } from './url';
 
 export const valiBrandSchema = yup.object().shape({
     brandCode: yup.string().required('Brand Code không được để trống!'),
@@ -15,7 +16,7 @@ class BrandService {
     fetchBrand = () => {
         return Axios({
             method: 'GET',
-            url: 'http://vexere-hoai.herokuapp.com/brand',
+            url: `${urlGlobal}/brand`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
@@ -24,7 +25,7 @@ class BrandService {
     postBrand = (data) => {
         return Axios({
             method: 'POST',
-            url: 'http://vexere-hoai.herokuapp.com/brand',
+            url: `${urlGlobal}/brand`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -34,7 +35,7 @@ class BrandService {
     updateBrand = (data) => {
         return Axios({
             method: 'PATCH',
-            url: 'http://vexere-hoai.herokuapp.com/brand',
+            url: `${urlGlobal}/brand`,
             data,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
@@ -44,7 +45,7 @@ class BrandService {
     deleteBrand = (brandCode) => {
         return Axios({
             method: 'DELETE',
-            url: `http://vexere-hoai.herokuapp.com/brand?brandCode=${brandCode}`,
+            url: `${urlGlobal}/brand?brandCode=${brandCode}`,
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('SignInVeXeRe')
             }
