@@ -1,5 +1,5 @@
 # Domain
-[vexere.surge.sh](https://vexere.surge.sh)
+[https://vexere.surge.sh](https://vexere.surge.sh)
 
 ## Deploy to surge.sh
 
@@ -7,8 +7,12 @@
 - `npm install`
 - `npm run deploy`
 
-### Account Admin
+### Admin Account
 - username: `admin`
 - password: `admin`
+
+### Guest Account
+- username: `nguyenvana`
+- password: `123456`
 
 Good luck <3
