@@ -1,5 +1,5 @@
 # Domain
-[vexere.surge.sh](https://vexere.surge.sh)
+[vexere.surge.sh](https://www.vexere.surge.sh)
 
 ## Deploy to surge.sh
 
